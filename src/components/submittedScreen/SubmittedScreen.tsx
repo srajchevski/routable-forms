@@ -4,7 +4,7 @@ import './styles.scss'
 
 const SubmittedScreen = () => {
   return (
-    <div className="container">
+    <div className="submitted-container">
       <h1 className="title">
         <span role="img" aria-label="">
           👍
