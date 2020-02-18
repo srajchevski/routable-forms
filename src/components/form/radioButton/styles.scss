@@ -1,0 +1,77 @@
+@import '../common.scss';
+
+.container {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: $input-size;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: flex;
+  align-items: center;
+}
+
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  display: none;
+}
+
+.checkmark {
+  margin-right: 15px;
+  height: $input-size;
+  width: $input-size;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 1px solid #D3DCF4;
+  position: relative;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container input:checked ~ .checkmark {
+  background-color: #fff;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  position: absolute;
+  top: 25%;
+  left: 27%;
+	width: $radio-size;
+	height: $radio-size;
+	border-radius: 50%;
+	background: $blue;
+}
+
+@media (max-width: 600px) {
+  .container {
+    font-size: $small-input-size;
+  }
+  .checkmark {
+    width: $small-input-size;
+    height: $small-input-size;
+  }
+  .container .checkmark:after {
+    width: $small-radio-size;
+    height: $small-radio-size;
+    border-radius: 50%;
+    background: $blue;
+    top: 30%;
+    left: 25%;
+  }
+}
