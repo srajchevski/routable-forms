@@ -1,13 +1,5 @@
-@import '../form/common.scss';
+@import '../common.scss';
 
-h1.form-title {
-    font-size: 32px;
-    line-height: 37px;
-    letter-spacing: -0.768px;
-    color: #000000;
-    border-bottom: 1px solid #e1e1e1;
-    padding: 25px 20px;
-}
 div.form-container {
     margin: 0 auto;
     width: 75%;
@@ -84,6 +76,9 @@ input[type=text] {
         background-color: $blue-disabled;
         cursor: not-allowed;
     }
+    button.submitting {
+        background-color: #D8D8D8;
+    }
 }
 
 .multiselect {
@@ -138,11 +133,6 @@ input[type=text] {
     }
     div.md-12 {
         margin: 4px 0;
-    }
-    h1.form-title {
-        font-size: 26px;
-        padding: 10px 20px;
-        text-align: center;
     }
     input[type=text], .multiselect, .buttonWrapper button {
         font-size: $small-input-size;

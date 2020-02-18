@@ -1,7 +1,7 @@
 import React from 'react'
 import { WrappedFieldInputProps } from 'redux-form'
 import InputContainer from '../inputContainer/InputContainer'
-import '../common.scss'
+import '../../common.scss'
 
 interface RenderFieldProps {
   className: string

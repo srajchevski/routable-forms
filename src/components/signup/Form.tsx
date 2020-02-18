@@ -17,7 +17,6 @@ const SignupForm: React.FC<InjectedFormProps<SignupFormProps>> = props => {
 
   return (
     <>
-      <h1 className="form-title">Routatest Signup Form</h1>
       <form onSubmit={handleSubmit}>
         <div className="form-container">
           <div className="form-input-row">
@@ -64,8 +63,12 @@ const SignupForm: React.FC<InjectedFormProps<SignupFormProps>> = props => {
           </div>
 
           <div className="buttonWrapper">
-            <button type="submit" disabled={!isValid || pristine || submitting}>
-              Submit
+            <button
+              className={submitting ? 'submitting' : ''}
+              type="submit"
+              disabled={!isValid || pristine || submitting}
+            >
+              {submitting ? '... Submitting' : 'Submit'}
             </button>
           </div>
         </div>
