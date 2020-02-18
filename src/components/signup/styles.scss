@@ -42,6 +42,9 @@ div.form-input-row {
     color: #7A84A3;
 }
 
+input {
+    height: 100%;
+}
 input[type=text] {
     background-color: #fff;
     font-size: $input-size;
@@ -84,30 +87,32 @@ input[type=text] {
 }
 
 .multiselect {
-    border-radius: 4px;
-    margin: 0;
-    padding: $padding-vertical $padding-horizontal;
-    background: #FFFFFF;
-    border: 1px solid #D3DCF4 !important;
-    font-size: $input-size;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 40px;
+    border: none !important;
     box-shadow: none !important;
+    background: #FFFFFF;
+    font-size: $input-size;
 
     > div {
         display: flex;
+        margin: 0;
+        padding: 0;
+        overflow-y: auto;
+        align-items: center;
+    }
+    ul {
+        max-height: 24px;
     }
 
-    input::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    input::placeholder { 
         color: #292929;
-        opacity: 1; /* Firefox */
-      }
+        opacity: 1;
+    }
 }
-.multiselect-label {
-    position: absolute;
-    top: 5px;
+.rw-multiselect-tag {
+    font-size: 11px;
+}
+.rw-list-option {
+    font-size: 16px;
 }
 .rw-multiselect .rw-input-reset {
     padding: 0px !important;
