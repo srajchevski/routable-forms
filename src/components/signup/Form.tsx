@@ -13,7 +13,7 @@ const COLORS = ['Red', 'Yellow', 'Blue', 'Green', 'Purple']
 
 const SignupForm: React.FC<InjectedFormProps<SignupFormProps>> = props => {
   const { handleSubmit, pristine, submitting, error } = props
-  console.log(error)
+  const isValid = !Boolean(error)
 
   return (
     <>
@@ -64,7 +64,7 @@ const SignupForm: React.FC<InjectedFormProps<SignupFormProps>> = props => {
           </div>
 
           <div className="buttonWrapper">
-            <button type="submit" disabled={pristine || submitting}>
+            <button type="submit" disabled={!isValid || pristine || submitting}>
               Submit
             </button>
           </div>
@@ -82,6 +82,7 @@ const validate = (values: any) => {
     else if (key === 'colors' && !values[key].length) errors[key] = 'Required'
   })
 
+  if (Object.keys(errors).length) errors._error = errors
   return errors
 }
 
