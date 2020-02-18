@@ -10,7 +10,7 @@ import SubmittedScreen from 'components/submittedScreen/SubmittedScreen'
 const sleep = (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
 
 const App = () => {
-  const [isSubmitted, setSubmitted] = useState(true)
+  const [isSubmitted, setSubmitted] = useState(false)
 
   const onSubmit = async (values: SignupFormProps) => {
     await sleep(1200)
